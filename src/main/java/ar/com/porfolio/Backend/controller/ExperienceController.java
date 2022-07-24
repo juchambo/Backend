@@ -35,8 +35,13 @@ public class ExperienceController {
         expServ.borrarExperiencia(id);
     }
     
+    @GetMapping ("/experience/{id}")
+    public Experience buscarExperiencia(Long id) {
+    return expServ.buscarExperiencia(id);
+    }
+
     @PutMapping ("/experience/edit/")
-    public void modificarUsuario( @RequestBody Experience experiencia){
+    public void modificarExperiencia(Experience experiencia) {
         expServ.modificarExperiencia(experiencia);
     }
     

@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
     @Autowired
     private IUsuarioService userServ;
     
-    //usar método POST con JSON en el body
     @PostMapping ("/user/new")
     public void crearUsuario(@RequestBody Usuario user){
         userServ.crearUsuario(user);
@@ -36,8 +35,15 @@ import org.springframework.web.bind.annotation.RestController;
         userServ.borrarUsuario(id);
     }
     
+    @GetMapping ("/user/{id}")
+    public Usuario buscarUsuario(@PathVariable Long id) {
+        return userServ.buscarUsuario(id);
+    }
+    
     @PutMapping ("/user/edit")
     public void modificarUsuario(@RequestBody Usuario user){
         userServ.modificarUsuario(user);
     }
+
+    
 }
