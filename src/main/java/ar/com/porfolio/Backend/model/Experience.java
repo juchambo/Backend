@@ -17,7 +17,7 @@ public class Experience {
     private Long id;
     private String nombreEmpresa;
     private String puesto;
-    private Number esTrabajoActual;
+    private int esTrabajoActual;
     private String fechaInicio;
     private String fechaFin;
     private String descripcion;
@@ -28,7 +28,7 @@ public class Experience {
     public Experience() {
     }
 
-    public Experience(Long id, String nombreEmpresa, String puesto, Number esTrabajoActual, String fechaInicio, String fechaFin, String descripcion, String urlLogoEmpresa, Long userId, int tipoEmpleo) {
+    public Experience(Long id, String nombreEmpresa, String puesto, int esTrabajoActual, String fechaInicio, String fechaFin, String descripcion, String urlLogoEmpresa, Long userId, int tipoEmpleo) {
         this.id = id;
         this.nombreEmpresa = nombreEmpresa;
         this.puesto = puesto;
@@ -40,4 +40,5 @@ public class Experience {
         this.userId = userId;
         this.tipoEmpleo = tipoEmpleo;
     }
+
 }
