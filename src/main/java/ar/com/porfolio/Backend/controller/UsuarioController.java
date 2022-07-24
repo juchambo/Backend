@@ -19,17 +19,18 @@ import org.springframework.web.bind.annotation.RestController;
     @Autowired
     private IUsuarioService userServ;
     
-    @PostMapping ("/user/new")
-    public void crearUsuario(@RequestBody Usuario user){
-        userServ.crearUsuario(user);
-    }
-    
     @GetMapping ("/user/list")
     @ResponseBody
     public List<Usuario> verUsuarios (){
         return userServ.verUsuarios();
     }
     
+    @PostMapping ("/user/new")
+    public void crearUsuario(@RequestBody Usuario user){
+        userServ.crearUsuario(user);
+    }
+ 
+   
     @DeleteMapping ("/user/delete/{id}")
     public void borrarUsuario (@PathVariable Long id){
         userServ.borrarUsuario(id);
@@ -44,6 +45,4 @@ import org.springframework.web.bind.annotation.RestController;
     public void modificarUsuario(@RequestBody Usuario user){
         userServ.modificarUsuario(user);
     }
-
-    
 }
