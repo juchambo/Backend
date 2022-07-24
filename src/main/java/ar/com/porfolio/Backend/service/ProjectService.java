@@ -4,7 +4,9 @@ import ar.com.porfolio.Backend.model.Project;
 import ar.com.porfolio.Backend.repository.ProjectRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ProjectService implements IProjectService {
 
     @Autowired

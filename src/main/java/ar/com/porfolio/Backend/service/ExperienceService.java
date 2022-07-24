@@ -33,7 +33,7 @@ public class ExperienceService implements IExperienceService {
     }
 
     @Override
-    public void modificarExperiencia(Experience experiencia) {
+    public void modificarExperiencia( Experience experiencia) {
         expRepo.save(experiencia);
     }
 }

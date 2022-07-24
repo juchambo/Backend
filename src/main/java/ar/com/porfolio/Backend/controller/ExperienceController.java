@@ -41,8 +41,7 @@ public class ExperienceController {
     }
 
     @PutMapping ("/experience/edit/")
-    public void modificarExperiencia(Experience experiencia) {
+    public void modificarExperiencia(@RequestBody Experience experiencia) {
         expServ.modificarExperiencia(experiencia);
-    }
-    
+    }    
 }
