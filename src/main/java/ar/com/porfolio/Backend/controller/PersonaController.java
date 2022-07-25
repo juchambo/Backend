@@ -1,7 +1,6 @@
 package ar.com.porfolio.Backend.controller;
 
-import ar.com.porfolio.Backend.model.Usuario;
-import ar.com.porfolio.Backend.service.IUsuarioService;
+import ar.com.porfolio.Backend.model.Persona;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,22 +10,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+import ar.com.porfolio.Backend.service.IPersonaService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
- public class UsuarioController {
+@CrossOrigin(origins = "http://localhost:4200/")
+ public class PersonaController {
    
     @Autowired
-    private IUsuarioService userServ;
+    private IPersonaService userServ;
     
     @GetMapping ("/user/list")
     @ResponseBody
-    public List<Usuario> verUsuarios (){
+    public List<Persona> verUsuarios (){
         return userServ.verUsuarios();
     }
     
     @PostMapping ("/user/new")
-    public void crearUsuario(@RequestBody Usuario user){
+    public void crearUsuario(@RequestBody Persona user){
         userServ.crearUsuario(user);
     }
  
@@ -37,12 +39,12 @@ import org.springframework.web.bind.annotation.RestController;
     }
     
     @GetMapping ("/user/{id}")
-    public Usuario buscarUsuario(@PathVariable Long id) {
+    public Persona buscarUsuario(@PathVariable Long id) {
         return userServ.buscarUsuario(id);
     }
     
     @PutMapping ("/user/edit/{id}")
-    public void modificarUsuario(@PathVariable Long id, @RequestBody Usuario user){
+    public void modificarUsuario(@PathVariable Long id, @RequestBody Persona user){
         userServ.modificarUsuario(user);
     }
 }
