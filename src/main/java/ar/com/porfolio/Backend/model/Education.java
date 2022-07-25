@@ -22,4 +22,15 @@ public class Education {
     private int estaCursando;
     private String urlLogoInstitucion;
     private Long userId;
+
+    public Education(Long id, String nombreInstitucion, String tituloObtenido, String fechaInicio, String fechaFin, int estaCursando, String urlLogoInstitucion, Long userId) {
+        this.id = id;
+        this.nombreInstitucion = nombreInstitucion;
+        this.tituloObtenido = tituloObtenido;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.estaCursando = estaCursando;
+        this.urlLogoInstitucion = urlLogoInstitucion;
+        this.userId = userId;
+    }
 }

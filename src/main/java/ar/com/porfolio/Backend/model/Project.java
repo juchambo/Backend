@@ -22,4 +22,15 @@ public class Project {
     private String urlFotoProyecto;
     private Long user_Id;
 
+    public Project(Long id, String nombreProyecto, String puesto, String fechaInicio, String fechaFin, String descripcion, String urlFotoProyecto, Long user_Id) {
+        this.id = id;
+        this.nombreProyecto = nombreProyecto;
+        this.puesto = puesto;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.descripcion = descripcion;
+        this.urlFotoProyecto = urlFotoProyecto;
+        this.user_Id = user_Id;
+    }
+
 }
