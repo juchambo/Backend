@@ -1,10 +1,9 @@
 package ar.com.porfolio.Backend.repository;
 
-import ar.com.porfolio.Backend.model.Experience;
+import ar.com.porfolio.Backend.model.Education;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ExperienceRepository extends JpaRepository <Experience, Long>{ 
+public interface EducationRepository extends JpaRepository <Education, Long>{    
 }
-
