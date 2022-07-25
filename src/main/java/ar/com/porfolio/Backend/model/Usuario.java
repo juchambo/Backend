@@ -8,33 +8,19 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-@Entity 
+@Entity
 public class Usuario {
-    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String nombre;
-    private String apellido;
     private String email;
-    private String fechaNac;
-    private String sobreMi;
-    private String ciudadProvincia;
-    private String urlFotoPerfil;
-    private String urlFotoBackground;
+    private String password;
 
-    public Usuario() {
-}
-    
-    public Usuario(Long id, String nombre, String apellido, String email, String fechaNac, String sobreMi, String ciudadProvincia, String urlFotoPerfil, String urlFotoBackground) {
+    public Usuario(Long id, String email, String password) {
         this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
         this.email = email;
-        this.fechaNac = fechaNac;
-        this.sobreMi = sobreMi;
-        this.ciudadProvincia = ciudadProvincia;
-        this.urlFotoPerfil = urlFotoPerfil;
-        this.urlFotoBackground = urlFotoBackground;
+        this.password = password;
     }
+    
+    
 }
