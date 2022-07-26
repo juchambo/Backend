@@ -20,28 +20,28 @@ public class ExperienceController {
     @Autowired
     private IExperienceService expServ;
     
-    @PostMapping ("/experience/new")
+    @PostMapping ("/api/experience/new")
     public void crearExperiencia(@RequestBody Experience experiencia){
         expServ.crearExperiencia(experiencia);
     }
     
-    @GetMapping ("/experience/list")
+    @GetMapping ("/api/experience/list")
     @ResponseBody
     public List<Experience> verExperiencias (){
         return expServ.verExperiencias();
     }
     
-    @DeleteMapping ("/experience/delete/{id}")
+    @DeleteMapping ("/api/experience/delete/{id}")
     public void borrarExperiencia (@PathVariable Long id){
         expServ.borrarExperiencia(id);
     }
     
-    @GetMapping ("/experience/{id}")
+    @GetMapping ("/api/experience/{id}")
     public Experience buscarExperiencia(Long id) {
     return expServ.buscarExperiencia(id);
     }
 
-    @PutMapping ("/experience/edit/")
+    @PutMapping ("/api/experience/edit/")
     public void modificarExperiencia(@RequestBody Experience experiencia) {
         expServ.modificarExperiencia(experiencia);
     }    

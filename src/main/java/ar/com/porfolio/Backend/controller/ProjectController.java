@@ -20,28 +20,28 @@ public class ProjectController {
     @Autowired
     private IProjectService projServ;
 
-    @GetMapping ("/project/list")
+    @GetMapping ("/api/project/list")
     @ResponseBody
     public List<Project> verProyectos() {
         return projServ.verProyectos();
     }
 
-    @PostMapping ("/project/new")
+    @PostMapping ("/api/project/new")
     public void creaProyecto(@RequestBody Project proyecto) {
         projServ.creaProyecto(proyecto);
     }
 
-    @DeleteMapping ("/project/delete/{id}")
+    @DeleteMapping ("/api/project/delete/{id}")
     public void borrarProyecto(@PathVariable Long id) {
         projServ.borrarProyecto(id);
     }
 
-    @GetMapping ("/project/{id}")
+    @GetMapping ("/api/project/{id}")
     public Project buscarProyecto(@PathVariable long id) {
         return projServ.buscarProyecto(id);
     }
 
-    @PutMapping ("/project/edit")
+    @PutMapping ("/api/project/edit")
     public void modificarProyecto(@RequestBody Project proyecto) {
         projServ.modificarProyecto(proyecto);
     }       

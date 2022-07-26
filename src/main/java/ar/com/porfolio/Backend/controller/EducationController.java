@@ -19,23 +19,23 @@ public class EducationController {
     @Autowired
     private IEducationService eduServ;
 
-    @PostMapping ("/education/new")
+    @PostMapping ("/api/education/new")
     public void crearEducacion(@RequestBody Education educacion) {
         eduServ.crearEducacion(educacion);
     }
 
-    @GetMapping ("/education/list")
+    @GetMapping ("/api/education/list")
     @ResponseBody
     public List<Education> verEducacion() {
         return eduServ.verEducacion();
     }
 
-    @DeleteMapping ("/education/delete/{id}")
+    @DeleteMapping ("/api/education/delete/{id}")
     public void borrarEducacion(@PathVariable Long id) {
         eduServ.borrarEducacion(id);
     }
 
-    @GetMapping ("/education/{id}")
+    @GetMapping ("/api/education/{id}")
     public Education buscarExperiencia(@PathVariable Long id) {
         return eduServ.buscarExperiencia(id);
     }

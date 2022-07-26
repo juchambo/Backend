@@ -19,29 +19,29 @@ import org.springframework.web.bind.annotation.RestController;
     @Autowired
     private IPersonaService userServ;
     
-    @GetMapping ("/user/list")
+    @GetMapping ("/api/user/list")
     @ResponseBody
     public List<Persona> verUsuarios (){
         return userServ.verUsuarios();
     }
     
-    @PostMapping ("/user/new")
+    @PostMapping ("/api/user/new")
     public void crearUsuario(@RequestBody Persona user){
         userServ.crearUsuario(user);
     }
  
    
-    @DeleteMapping ("/user/delete/{id}")
+    @DeleteMapping ("/api/user/delete/{id}")
     public void borrarUsuario (@PathVariable Long id){
         userServ.borrarUsuario(id);
     }
     
-    @GetMapping ("/user/{id}")
+    @GetMapping ("/api/user/{id}")
     public Persona buscarUsuario(@PathVariable Long id) {
         return userServ.buscarUsuario(id);
     }
     
-    @PutMapping ("/user/edit/{id}")
+    @PutMapping ("/api/user/edit/{id}")
     public void modificarUsuario(@PathVariable Long id, @RequestBody Persona user){
         userServ.modificarUsuario(user);
     }
