@@ -4,7 +4,6 @@ import ar.com.porfolio.Backend.model.Education;
 import ar.com.porfolio.Backend.service.IEducationService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,29 +14,28 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200/")
 public class EducationController {
     
     @Autowired
     private IEducationService eduServ;
 
-    @PostMapping ("/education/new")
+    @PostMapping ("/api/education/new")
     public void crearEducacion(@RequestBody Education educacion) {
         eduServ.crearEducacion(educacion);
     }
 
-    @GetMapping ("/education/list")
+    @GetMapping ("/api/education/list")
     @ResponseBody
     public List<Education> verEducacion() {
         return eduServ.verEducacion();
     }
 
-    @DeleteMapping ("/education/delete/{id}")
+    @DeleteMapping ("/api/education/delete/{id}")
     public void borrarEducacion(@PathVariable Long id) {
         eduServ.borrarEducacion(id);
     }
 
-    @GetMapping ("/education/{id}")
+    @GetMapping ("/api/education/{id}")
     public Education buscarExperiencia(@PathVariable Long id) {
         return eduServ.buscarExperiencia(id);
     }
