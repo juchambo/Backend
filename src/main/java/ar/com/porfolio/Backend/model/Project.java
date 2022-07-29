@@ -12,7 +12,7 @@ import lombok.Setter;
 public class Project {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombreProyecto;
     private String puesto;
@@ -20,9 +20,11 @@ public class Project {
     private String fechaFin; 
     private String descripcion; 
     private String urlFotoProyecto;
-    private Long user_Id;
 
-    public Project(Long id, String nombreProyecto, String puesto, String fechaInicio, String fechaFin, String descripcion, String urlFotoProyecto, Long user_Id) {
+    public Project() {
+    }
+
+    public Project(Long id, String nombreProyecto, String puesto, String fechaInicio, String fechaFin, String descripcion, String urlFotoProyecto) {
         this.id = id;
         this.nombreProyecto = nombreProyecto;
         this.puesto = puesto;
@@ -30,7 +32,5 @@ public class Project {
         this.fechaFin = fechaFin;
         this.descripcion = descripcion;
         this.urlFotoProyecto = urlFotoProyecto;
-        this.user_Id = user_Id;
     }
-
 }

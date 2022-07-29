@@ -13,7 +13,7 @@ import lombok.Setter;
 public class Education {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombreInstitucion;
     private String tituloObtenido;
@@ -21,13 +21,12 @@ public class Education {
     private String fechaFin;
     private int estaCursando;
     private String urlLogoInstitucion;
-    private Long userId;
+
 
     public Education() {
     }
 
-    
-    public Education(Long id, String nombreInstitucion, String tituloObtenido, String fechaInicio, String fechaFin, int estaCursando, String urlLogoInstitucion, Long userId) {
+    public Education(Long id, String nombreInstitucion, String tituloObtenido, String fechaInicio, String fechaFin, int estaCursando, String urlLogoInstitucion) {
         this.id = id;
         this.nombreInstitucion = nombreInstitucion;
         this.tituloObtenido = tituloObtenido;
@@ -35,6 +34,5 @@ public class Education {
         this.fechaFin = fechaFin;
         this.estaCursando = estaCursando;
         this.urlLogoInstitucion = urlLogoInstitucion;
-        this.userId = userId;
     }
 }
