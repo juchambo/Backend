@@ -38,7 +38,7 @@ public class ExperienceController {
     }
     
     @GetMapping ("/api/experience/{id}")
-    public Experience buscarExperiencia(Long id) {
+    public Experience buscarExperiencia(@PathVariable Long id) {
     return expServ.buscarExperiencia(id);
     }
 

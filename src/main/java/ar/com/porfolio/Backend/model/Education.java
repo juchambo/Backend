@@ -21,12 +21,14 @@ public class Education {
     private String fechaFin;
     private int estaCursando;
     private String urlLogoInstitucion;
+    private Long persona_id;
+
 
 
     public Education() {
     }
 
-    public Education(Long id, String nombreInstitucion, String tituloObtenido, String fechaInicio, String fechaFin, int estaCursando, String urlLogoInstitucion) {
+    public Education(Long id, String nombreInstitucion, String tituloObtenido, String fechaInicio, String fechaFin, int estaCursando, String urlLogoInstitucion, Long persona_id) {
         this.id = id;
         this.nombreInstitucion = nombreInstitucion;
         this.tituloObtenido = tituloObtenido;
@@ -34,5 +36,8 @@ public class Education {
         this.fechaFin = fechaFin;
         this.estaCursando = estaCursando;
         this.urlLogoInstitucion = urlLogoInstitucion;
+        this.persona_id = persona_id;
     }
+
+
 }

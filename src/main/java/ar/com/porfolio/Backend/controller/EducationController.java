@@ -42,8 +42,8 @@ public class EducationController {
         return eduServ.buscarExperiencia(id);
     }
 
-    @PutMapping ("education/edit")
-    public void modificarEducacion(Education educacion) {
+    @PutMapping ("/api/education/edit")
+    public void modificarEducacion(@RequestBody Education educacion) {
         eduServ.modificarEducacion(educacion);
     }
     
