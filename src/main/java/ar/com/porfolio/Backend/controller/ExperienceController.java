@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin (origins = "http://localhost:4200/")
 @RestController
 public class ExperienceController {
 
@@ -37,7 +38,7 @@ public class ExperienceController {
     }
     
     @GetMapping ("/api/experience/{id}")
-    public Experience buscarExperiencia(Long id) {
+    public Experience buscarExperiencia(@PathVariable Long id) {
     return expServ.buscarExperiencia(id);
     }
 
@@ -45,4 +46,5 @@ public class ExperienceController {
     public void modificarExperiencia(@RequestBody Experience experiencia) {
         expServ.modificarExperiencia(experiencia);
     }    
+
 }
