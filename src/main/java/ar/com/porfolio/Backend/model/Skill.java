@@ -17,16 +17,17 @@ public class Skill {
     private Long id;
     private String habilidad;
     private String nivelHabilidad;
+    private String urlHabilidad;
     private Long persona_id;
 
     public Skill() {
     }
 
-    public Skill(Long id, String habilidad, String nivelHabilidad, Long persona_id) {
+    public Skill(Long id, String habilidad, String nivelHabilidad, String urlHabilidad, Long persona_id) {
         this.id = id;
         this.habilidad = habilidad;
         this.nivelHabilidad = nivelHabilidad;
+        this.urlHabilidad = urlHabilidad;
         this.persona_id = persona_id;
     }
-    
 }
