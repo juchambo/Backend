@@ -1,6 +1,5 @@
 package ar.com.porfolio.Backend.controller;
 
-import ar.com.porfolio.Backend.model.Experience;
 import ar.com.porfolio.Backend.model.Skill;
 import ar.com.porfolio.Backend.service.ISkillService;
 import java.util.List;
