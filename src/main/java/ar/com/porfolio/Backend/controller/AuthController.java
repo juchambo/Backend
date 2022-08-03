@@ -2,6 +2,7 @@ package ar.com.porfolio.Backend.controller;
 
 import ar.com.porfolio.Backend.dto.LoginDto;
 import ar.com.porfolio.Backend.dto.SignUpDto;
+import ar.com.porfolio.Backend.dto.UsuarioLogeadoDto;
 import ar.com.porfolio.Backend.model.Role;
 import ar.com.porfolio.Backend.model.User;
 import ar.com.porfolio.Backend.repository.RoleRepository;
@@ -40,12 +41,13 @@ public class AuthController {
     private PasswordEncoder passwordEncoder;
 
     @PostMapping("/signin")
-    public ResponseEntity<String> authenticateUser(@RequestBody LoginDto loginDto){
+    public ResponseEntity<?> authenticateUser(@RequestBody LoginDto loginDto){
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 loginDto.getEmail(), loginDto.getPassword()));
-
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        return new ResponseEntity<>("User signed-in successfully!.", HttpStatus.OK);
+        UsuarioLogeadoDto jsonResponse = new UsuarioLogeadoDto();
+        
+        return new ResponseEntity<>(jsonResponse, HttpStatus.OK);
     }
 
     @PostMapping("/signup")
