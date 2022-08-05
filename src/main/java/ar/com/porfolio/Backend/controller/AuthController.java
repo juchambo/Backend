@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collections;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin (origins = "https://mi-porfolio.web.app/")
+@CrossOrigin (origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -53,10 +53,10 @@ public class AuthController {
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@RequestBody SignUpDto signUpDto){
 
-        // add check for username exists in a DB
+        /* add check for username exists in a DB
         if(userRepository.existsByUsername(signUpDto.getUsername())){
             return new ResponseEntity<>("Username is already taken!", HttpStatus.BAD_REQUEST);
-        }
+        }*/
 
         // add check for email exists in DB
         if(userRepository.existsByEmail(signUpDto.getEmail())){
@@ -65,8 +65,6 @@ public class AuthController {
 
         // create user object
         User user = new User();
-        user.setName(signUpDto.getName());
-        user.setUsername(signUpDto.getUsername());
         user.setEmail(signUpDto.getEmail());
         user.setPassword(passwordEncoder.encode(signUpDto.getPassword()));
 
