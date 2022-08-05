@@ -19,8 +19,8 @@ public class BackendApplication {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/**").allowedOrigins("https://mi-porfolio.web.app/")
-                        .allowedMethods("GET", "PUT", "POST", "PATCH", "DELETE", "OPTIONS")
+                registry.addMapping("/api/**").allowedOrigins("http://localhost:4200/")
+                        .allowedMethods("*")
                         .allowedHeaders("*")
                         .maxAge(3600L);
             }

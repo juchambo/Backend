@@ -14,7 +14,7 @@ import ar.com.porfolio.Backend.service.IPersonaService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin (origins = "https://mi-porfolio.web.app/")
+@CrossOrigin (origins = "http://localhost:4200/")
 @RestController
  public class PersonaController {
    
