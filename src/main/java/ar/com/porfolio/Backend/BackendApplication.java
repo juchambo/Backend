@@ -20,6 +20,7 @@ public class BackendApplication {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**").allowedOrigins("https://mi-porfolio.web.app/", "http://localhost:4200/")
+
                         .allowedMethods("*")
                         .allowedHeaders("*")
                         .maxAge(3600L);
