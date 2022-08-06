@@ -43,8 +43,8 @@ import org.springframework.web.bind.annotation.RestController;
         return userServ.buscarUsuario(id);
     }
     
-    @PutMapping ("/api/user/edit/{id}")
-    public void modificarUsuario(@PathVariable Long id, @RequestBody Persona user){
+    @PutMapping ("/api/user/edit/")
+    public void modificarUsuario(@RequestBody Persona user){
         userServ.modificarUsuario(user);
     }
 }
